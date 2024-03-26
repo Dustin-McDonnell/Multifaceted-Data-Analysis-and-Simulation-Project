@@ -18,8 +18,9 @@ public class CubeRoot {
         try{
             System.out.println("Enter the name of the data file you want to create.");
             String fileName = scanner.nextLine();
-            //Path I currently use on my pc not sure how that will work for the Prof
-            File file = new File("/Users/dustinmcdonnell/Desktop/Project 2/src/DataFiles/" + fileName + ".csv");
+            //Path I currently use on my macbook not sure how that will work for the Prof
+            //Working on this on my pc instead of macbook can confirm this is a problem
+            File file = new File("src/DataFiles/" + fileName + ".csv");
 
             if (file.createNewFile()){
                 System.out.println("File created: " + file);
@@ -75,7 +76,7 @@ public class CubeRoot {
     public void writeCubeRootData(File file, ArrayList<String> graphData){
     try{
         FileWriter fw = new FileWriter(file);
-        fw.write("X Value,Y Value\n");
+        fw.write("X_Value,Y_Value\n");
         for(String s: graphData){
             fw.write(s + "\n");
         }
