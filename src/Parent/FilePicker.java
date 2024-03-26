@@ -1,6 +1,11 @@
+package Parent;
+
 import java.io.File;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+//https://stackoverflow.com/questions/1844688/how-can-i-read-all-files-in-a-folder-from-java
+//How I learned to read the files from a directory
 
 public class FilePicker {
     Scanner scanner = new Scanner(System.in);

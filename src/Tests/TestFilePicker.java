@@ -1,4 +1,7 @@
+package Tests;
+
 import java.io.File;
+import Parent.*;
 
 public class TestFilePicker {
     public static void main(String[] args){
