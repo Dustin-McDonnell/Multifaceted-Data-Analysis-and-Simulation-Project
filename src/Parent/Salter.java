@@ -1,5 +1,6 @@
 package Parent;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -10,14 +11,15 @@ import java.util.Scanner;
 //How I learned to read data from a file
 
 public class Salter {
-    FilePicker fp = new FilePicker();
-    File file = fp.filePicker();
-    Scanner userInput = new Scanner(System.in);
-    ArrayList<String> dataFull = new ArrayList<>();
-    ArrayList<String> data = new ArrayList<>();
-    ArrayList<String> splitData = new ArrayList<>();
-    ArrayList<String> splitDataFull = new ArrayList<>();
-    Random rng = new Random();
+    private FilePicker fp = new FilePicker();
+    private File file = fp.filePicker();
+    private Scanner userInput = new Scanner(System.in);
+    private ArrayList<String> dataFull = new ArrayList<>();
+    private ArrayList<String> data = new ArrayList<>();
+    private ArrayList<String> splitDataFull = new ArrayList<>();
+    private Random rng = new Random();
+    private CreateFile cf = new CreateFile();
+    private WriteData wd = new WriteData();
 
 
     public void salter(){
@@ -25,7 +27,6 @@ public class Salter {
 
         try{
             Scanner scannerFull = new Scanner(file);
-            Scanner scanner = new Scanner(file);
 
             //Test Skipping first line
             scannerFull.next();
@@ -33,25 +34,11 @@ public class Salter {
             while(scannerFull.hasNext()){
                 dataFull.add(scannerFull.next());
             }
-
-            //Skipping first line in File for just Y Values
-            scanner.nextLine();
-            while(scanner.hasNext()){
-                data.add(scanner.next());
-            }
         }
         catch (IOException e){
             System.out.println("An IO error occurred.");
         }
 
-        /*
-        //Loop for getting Y values in splitData array and Salt with previously chosen Rng Range
-        for (int i = 0; i < data.size(); i++){
-            String temp = data.get(i);
-            String[] split = temp.split(",");
-            double tempSalt = Double.parseDouble(split[1]) + rng.nextInt(-chosenNumber,chosenNumber + 1);
-            splitData.add(String.valueOf(tempSalt));
-        }*/
 
         //Loop for getting every Value in data
         for(int i = 0; i < dataFull.size(); i++){
@@ -62,16 +49,15 @@ public class Salter {
             splitDataFull.add(String.valueOf(tempSalt));
         }
 
-        /*
-        System.out.println("Salted Data");
-        for(int i = 0; i < splitData.size(); i++){
-            System.out.println(splitData.get(i));
-        }*/
-
-        System.out.println("Correct Data");
-        for(int i = 0; i < splitDataFull.size(); i++){
-            System.out.println(splitDataFull.get(i));
+        //Formatting the data Correctly
+        for (int i = 0; i < splitDataFull.size() - 1; i = i + 2){
+            data.add(splitDataFull.get(i) + "," + splitDataFull.get(i+1));
         }
+
+        System.out.println("Enter the name you want for the Salted Data");
+        File saltedFile = cf.createFile();
+        wd.writeData(saltedFile,data);
+
 
     }
 
@@ -85,7 +71,6 @@ public class Salter {
 
                 if (number > 0) {
                     running = false;
-                    System.out.println("Number: " + number);
                     return number;
                 } else {
                     System.out.println("Enter a number greater than zero");

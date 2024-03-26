@@ -8,8 +8,8 @@ import java.util.Scanner;
 //How I learned to read the files from a directory
 
 public class FilePicker {
-    Scanner scanner = new Scanner(System.in);
-    boolean running = true;
+   private Scanner scanner = new Scanner(System.in);
+    private boolean running = true;
     public File filePicker(){
         File directory = new File("src/DataFiles");
         File[] files = directory.listFiles();

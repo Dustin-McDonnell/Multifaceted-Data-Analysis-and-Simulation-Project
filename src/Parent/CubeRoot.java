@@ -13,27 +13,6 @@ import java.lang.Math;
 public class CubeRoot {
     //Create Scanner
     Scanner scanner = new Scanner(System.in);
-    //Creates the initial blank csv file if there are no duplicates
-    public File createFile(){
-        try{
-            System.out.println("Enter the name of the data file you want to create.");
-            String fileName = scanner.nextLine();
-            //Path I currently use on my macbook not sure how that will work for the Prof
-            //Working on this on my pc instead of macbook can confirm this is a problem
-            File file = new File("src/DataFiles/" + fileName + ".csv");
-
-            if (file.createNewFile()){
-                System.out.println("File created: " + file);
-                return file;
-            }
-
-        }
-        catch (IOException e){
-            System.out.println("An error occurred.");
-        }
-        return null;
-    }
-
     public ArrayList<Double> graphSpecifics(){
         ArrayList<Double> graph = new ArrayList<>();
         boolean working = true;
@@ -73,18 +52,4 @@ public class CubeRoot {
         return data;
     }
 
-    public void writeCubeRootData(File file, ArrayList<String> graphData){
-    try{
-        FileWriter fw = new FileWriter(file);
-        fw.write("X_Value,Y_Value\n");
-        for(String s: graphData){
-            fw.write(s + "\n");
-        }
-        fw.close();
-        System.out.println("Graph data written to: " + file);
-    }
-    catch (IOException e){
-        System.out.println("An error occurred.");
-    }
-    }
 }
