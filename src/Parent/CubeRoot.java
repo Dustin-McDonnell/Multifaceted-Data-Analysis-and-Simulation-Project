@@ -1,11 +1,8 @@
 package Parent;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.lang.Math;
 
 //https://www.w3schools.com/java/java_files_create.asp This is what I used to learn to write data to files

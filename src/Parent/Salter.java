@@ -1,7 +1,5 @@
 package Parent;
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -11,52 +9,35 @@ import java.util.Scanner;
 //How I learned to read data from a file
 
 public class Salter {
-    private FilePicker fp = new FilePicker();
-    private File file = fp.filePicker();
     private Scanner userInput = new Scanner(System.in);
     private ArrayList<String> dataFull = new ArrayList<>();
     private ArrayList<String> data = new ArrayList<>();
     private ArrayList<String> splitDataFull = new ArrayList<>();
     private Random rng = new Random();
     private CreateFile cf = new CreateFile();
-    private WriteData wd = new WriteData();
+    private ManipulateData md = new ManipulateData();
+    private File file = md.filePicker();
 
 
     public void salter(){
         int chosenNumber = rngNumberChooser();
 
-        try{
-            Scanner scannerFull = new Scanner(file);
+        dataFull = md.readData(file);
 
-            //Test Skipping first line
-            scannerFull.next();
-
-            while(scannerFull.hasNext()){
-                dataFull.add(scannerFull.next());
-            }
-        }
-        catch (IOException e){
-            System.out.println("An IO error occurred.");
-        }
-
-
-        //Loop for getting every Value in data
+        //Loop for getting every Value in data and Salting it
         for(int i = 0; i < dataFull.size(); i++){
-            String temp = dataFull.get(i);
-            String[] split = temp.split(",");
+            String[] split = dataFull.get(i).split(",");
             double tempSalt = Double.parseDouble(split[1]) + rng.nextInt(-chosenNumber,chosenNumber + 1);
             splitDataFull.add(split[0]);
             splitDataFull.add(String.valueOf(tempSalt));
         }
 
-        //Formatting the data Correctly
-        for (int i = 0; i < splitDataFull.size() - 1; i = i + 2){
-            data.add(splitDataFull.get(i) + "," + splitDataFull.get(i+1));
-        }
+        //Formatting the manipulated data back to CSV
+        data = md.formatCSV(splitDataFull);
 
         System.out.println("Enter the name you want for the Salted Data");
         File saltedFile = cf.createFile();
-        wd.writeData(saltedFile,data);
+        md.writeData(saltedFile,data);
 
 
     }
