@@ -45,7 +45,7 @@ public class Salter {
         for (int i = 0; i < data.size(); i++){
             String temp = data.get(i);
             String[] split = temp.split(",");
-            double tempSalt = Double.parseDouble(split[1]) + rng.nextInt(0,chosenNumber);
+            double tempSalt = Double.parseDouble(split[1]) + rng.nextInt(-chosenNumber,chosenNumber);
             splitData.add(String.valueOf(tempSalt));
         }
 
@@ -57,10 +57,12 @@ public class Salter {
             splitDataFull.add(split[1]);
         }
 
+        System.out.println("Salted Data");
         for(int i = 0; i < splitData.size(); i++){
             System.out.println(splitData.get(i));
         }
 
+        System.out.println("Correct Data");
         for(int i = 0; i < splitDataFull.size(); i++){
             System.out.println(splitDataFull.get(i));
         }
