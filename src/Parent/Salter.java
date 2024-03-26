@@ -27,6 +27,9 @@ public class Salter {
             Scanner scannerFull = new Scanner(file);
             Scanner scanner = new Scanner(file);
 
+            //Test Skipping first line
+            scannerFull.next();
+
             while(scannerFull.hasNext()){
                 dataFull.add(scannerFull.next());
             }
@@ -41,26 +44,29 @@ public class Salter {
             System.out.println("An IO error occurred.");
         }
 
+        /*
         //Loop for getting Y values in splitData array and Salt with previously chosen Rng Range
         for (int i = 0; i < data.size(); i++){
             String temp = data.get(i);
             String[] split = temp.split(",");
-            double tempSalt = Double.parseDouble(split[1]) + rng.nextInt(-chosenNumber,chosenNumber);
+            double tempSalt = Double.parseDouble(split[1]) + rng.nextInt(-chosenNumber,chosenNumber + 1);
             splitData.add(String.valueOf(tempSalt));
-        }
+        }*/
 
         //Loop for getting every Value in data
         for(int i = 0; i < dataFull.size(); i++){
             String temp = dataFull.get(i);
             String[] split = temp.split(",");
+            double tempSalt = Double.parseDouble(split[1]) + rng.nextInt(-chosenNumber,chosenNumber + 1);
             splitDataFull.add(split[0]);
-            splitDataFull.add(split[1]);
+            splitDataFull.add(String.valueOf(tempSalt));
         }
 
+        /*
         System.out.println("Salted Data");
         for(int i = 0; i < splitData.size(); i++){
             System.out.println(splitData.get(i));
-        }
+        }*/
 
         System.out.println("Correct Data");
         for(int i = 0; i < splitDataFull.size(); i++){
