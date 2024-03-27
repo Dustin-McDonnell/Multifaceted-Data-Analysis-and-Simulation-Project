@@ -45,7 +45,7 @@ public class Smoother {
 
 
         System.out.println("Enter the name of the Smooth File you want to create");
-        md.formatCSV(fullArray);
+        fullArray = md.formatCSV(fullArray);
         File smoothFile = cf.createFile();
         md.writeData(smoothFile,fullArray);
 
