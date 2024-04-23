@@ -1,0 +1,73 @@
+CSV stick it in your Resume
+One of the most common ways to export or convey data is the CSV file typing
+It contains a header of all the expected value types and every values is seperated by a comma.
+Hench Comma separated Value.
+Notepad files can be saved as csv that the computer will understand how to interoperate.
+Excel also knows how to make this work.
+
+Project 2
+Program Plotter
+Pick a formula/function that you like Ex. Y=mx+b
+
+Write a program that plots the output in csv
+Pick a function
+Pick a starting and ending points for your x values, ex, -10.0 to 10.0 in increments of .1
+PLug in those values into your function so that you get a y value
+Store the x and y values into a data structure of your choice
+Use any file exporting technique from your past or the internet(cite it if you're not free handling it with no references)
+to export out as your data.csv
+
+Plotter Results
+Open in excel and create a graph
+Make sure that the program accepts parameters to determine the range
+ie 0-100. -100 to 100
+Also write a parameter to determine the number of points to plot, or the interval between points
+Collect sample outputs of this program in excel chart form showing several different configurations
+
+Salting
+What is salting? Its when you add garbage to your data or otherwise mess it up.
+Why would we want to salt?
+Compared Apple search to Google search.
+
+Program a Salter
+Write a program, it accepts a csv(of x y values)
+Loop through the y values and +/- a random number from it.
+The random number comes from a range you can configure
+Be sure when you're representing the output,
+that you chose a significantly large salt value.
+Have significant number of data points. (No, 10 is not enough.)
+
+Salting Results
+Part1.Parent.Run several tsts with different salt values
+Testing on plots with high and low number of data points
+
+Open in excel and create a graph.
+The goal is to see the volatility. Show all of your work.
+
+Let's try to reverse the damages
+This one is going to be an attempt to smooth the salted data.
+Smoothing or cleaning up damaged data, is common enough.
+
+Program Graph smoother
+Write a program that loads salted data. (Technically any data, but its purpose will be to smooth salted data.
+Have you program loop through and replace the y values with the average of the y values around it.
+You will need to pick a range, we'll call it the windowValue
+Ex. If range is 3, take 3 points left and right of your index add then up and divide.
+Replace the index value with the new Y value.
+Iterate to next X point.
+If there are not enough points on left or right, use as many as you can,
+Ie. At far l;eft of graph, you'd only take the right 3 points and index an divide by four.
+Open in excel and create a graph
+Try smoothing your data more than once, what does the data look like the 2nd, 3rd, etc
+
+Results
+Write a report about the results. Use figures, screen shots, and whatever you need to covey your idea.
+
+Make sure to include
+A write up about what your program does and the results.
+Comparison of graph that you made.
+Change bounds graph and observe differences when your configurable variables are modified.
+Be brave, use big numbers and small numbers, and explore.
+Consider ways to modify the 3 programs to make them better.
+
+Make a repository Project 2 and start commiting.
