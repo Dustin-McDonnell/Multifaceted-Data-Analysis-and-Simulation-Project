@@ -12,7 +12,7 @@ public class CreateFile {
             String fileName = scanner.nextLine();
             //Path I currently use on my macbook not sure how that will work for the Prof
             //Working on this on my pc instead of macbook can confirm this is a problem
-            File file = new File("src/DataFiles/" + fileName + ".csv");
+            File file = new File("src/Part1/DataFiles/" + fileName + ".csv");
 
             if (file.createNewFile()){
                 System.out.println("File created: " + file);

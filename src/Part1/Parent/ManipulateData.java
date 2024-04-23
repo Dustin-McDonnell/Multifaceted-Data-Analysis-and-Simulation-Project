@@ -29,7 +29,7 @@ public class ManipulateData {
             Scanner scannerFull = new Scanner(file);
 
             //Test Skipping first line
-            scannerFull.next();
+            scannerFull.nextLine();
 
             while(scannerFull.hasNext()){
                 data.add(scannerFull.next());
@@ -52,7 +52,7 @@ public class ManipulateData {
     public File filePicker(){
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
-            File directory = new File("src/DataFiles");
+            File directory = new File("src/Part1/DataFiles");
             File[] files = directory.listFiles();
             File file = null;
 

@@ -1,4 +1,4 @@
-package Tests;
+package Part1.Tests;
 
 public class TestNestedLoop {
     public static void main(String[] args) {

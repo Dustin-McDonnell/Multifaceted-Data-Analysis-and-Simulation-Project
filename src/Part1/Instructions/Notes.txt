@@ -38,7 +38,7 @@ that you chose a significantly large salt value.
 Have significant number of data points. (No, 10 is not enough.)
 
 Salting Results
-Parent.Run several tsts with different salt values
+Part1.Parent.Run several tsts with different salt values
 Testing on plots with high and low number of data points
 
 Open in excel and create a graph.
