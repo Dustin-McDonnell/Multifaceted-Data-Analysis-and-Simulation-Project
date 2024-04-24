@@ -53,7 +53,7 @@ public class CubeRootPart3 {
         Cbrt cbrt = new Cbrt();
         ArrayList<Double> graphSpecifics = graphSpecifics();
         ArrayList<Double> data = new ArrayList<>();
-        for (Double i = graphSpecifics.get(0); i < graphSpecifics.get(1); i = i + graphSpecifics.get(2)){
+        for (Double i = graphSpecifics.get(0); i <= graphSpecifics.get(1); i = i + graphSpecifics.get(2)){
             data.add(i);
             data.add(cbrt.value(i));
         }
@@ -68,6 +68,9 @@ public class CubeRootPart3 {
             printer.printRecord("X_Value","Y_Value");
             for(int i = 0; i < data.size(); i = i + 2) {
                 printer.printRecord(data.get(i), data.get(i + 1));
+            }
+            if (data.size() % 2 != 0) {
+                printer.printRecord(data.getLast());
             }
         }
     }
@@ -113,6 +116,9 @@ public class CubeRootPart3 {
         XYSeriesCollection cubeRootDataSet= new XYSeriesCollection();
         for (int i = 0; i < data.size(); i = i + 2) {
             cubeRoot.add(data.get(i), data.get(i + 1));
+        }
+        if (data.size() % 2 != 0) {
+            cubeRoot.add(data.get(data.size() - 2),data.get(data.size() - 1));
         }
 
         cubeRootDataSet.addSeries(cubeRoot);
