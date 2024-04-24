@@ -3,6 +3,7 @@
   <component name="AdditionalModuleElements">
     <content url="file://$MODULE_DIR$" dumb="true">
       <sourceFolder url="file://$MODULE_DIR$/src/Part1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Part3" isTestSource="false" />
     </content>
   </component>
 </module>
