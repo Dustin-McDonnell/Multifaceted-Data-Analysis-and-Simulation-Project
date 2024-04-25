@@ -6,7 +6,10 @@ import java.util.Scanner;
 
 public class Part3Run {
     public void run() throws IOException {
+        CubeRootPart3 cbrt = new CubeRootPart3();
         Scanner scanner = new Scanner(System.in);
+        FilePicker fp = new FilePicker();
+        ManipulateData md = new ManipulateData();
 
         while(true){
 
@@ -15,26 +18,26 @@ public class Part3Run {
             System.out.println("1: Write Cube Root Data.");
             System.out.println("2: Graph a CSV file");
             System.out.println("3: Salt a CSV file");
+            System.out.println("4: Smooth a CSV file");
 
             if(scanner.hasNextInt()){
                 int choice = scanner.nextInt();
                 if(choice == 1){
-                    CubeRootPart3 cbrt = new CubeRootPart3();
                     ArrayList<Double> data = cbrt.cubeRootData();
                     cbrt.csvWriter(data);
                 }
                 if(choice == 2){
-                    FilePicker fp = new FilePicker();
-                    CubeRootPart3 cbrt = new CubeRootPart3();
                     File file = fp.filePicker();
                     cbrt.graphData(file);
                 }
                 if(choice == 3){
-                    Salter salt = new Salter();
-                    salt.saltData();
+                    md.saltData();
                 }
                 if(choice == 0){
                     break;
+                }
+                if(choice == 4){
+                    md.smoothData();
                 }
             }
             else{
