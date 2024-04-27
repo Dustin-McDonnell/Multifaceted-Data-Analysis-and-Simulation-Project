@@ -10,8 +10,6 @@ public class CreateFile {
         try{
             System.out.println("Enter the name of the data file you want to create.");
             String fileName = scanner.nextLine();
-            //Path I currently use on my macbook not sure how that will work for the Prof
-            //Working on this on my pc instead of macbook can confirm this is a problem
             File file = new File("src/Part1/DataFiles/" + fileName + ".csv");
 
             if (file.createNewFile()){
