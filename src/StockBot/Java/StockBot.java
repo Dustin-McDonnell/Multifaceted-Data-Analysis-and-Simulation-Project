@@ -22,6 +22,9 @@ public class StockBot {
         int algorithmNumber = -1;
         if (algorithmNumber == -1) {
             System.out.println("Enter the number of the algorithm you wish to use.");
+            System.out.println("1: Trade Algorithm");
+            System.out.println("2: Buy and Hold");
+            System.out.println("3: Buy and Hold, Sell when up 10 percent");
             if(scanner.hasNextInt()){
                 algorithmNumber = scanner.nextInt();
                 scanner.nextLine();  // Clear the scanner
