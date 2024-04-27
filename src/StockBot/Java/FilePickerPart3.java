@@ -59,6 +59,9 @@ public class FilePickerPart3 {
                 data.add((s.get("Close")));
                 data.add((s.get("Adj Close")));
                 data.add((s.get("Volume")));
+                if(s.isMapped("Moving Average")){
+                    data.add((s.get("Moving Average")));
+                }
                 structure.add(data);
             }
             return structure;
@@ -66,4 +69,5 @@ public class FilePickerPart3 {
             throw new RuntimeException(e);
         }
     }
+
 }
