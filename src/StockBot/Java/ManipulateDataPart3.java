@@ -17,6 +17,8 @@ public class ManipulateDataPart3 {
 
     public Integer chooseN(){
         Integer n = null;
+        System.out.println("Enter the range you want the RSI to be calculated for: If you enter 5 it will a 5 day range behind each element except");
+        System.out.println("for the first 10 days.");
         while (n == null) {
             if (scanner.hasNextInt()){
                 n = scanner.nextInt();
@@ -56,9 +58,11 @@ public class ManipulateDataPart3 {
         return rsiData;
     }
 
+
+
     public ArrayList<ArrayList<String>> smoothData() throws IOException {
         DescriptiveStatistics stats = new DescriptiveStatistics();
-        System.out.println("Enter the int range you want to smooth. ie: If you enter 5 it's 5 points to the left and right");
+        System.out.println("Enter the int range you want for the moving average. ie: If you enter 5 it's 5 points to the left and right");
         System.out.println("of the initial value.");
         while (true) {
             if (scanner.hasNextInt()) {

@@ -207,6 +207,9 @@ public class StockBot {
                 dateBalance.add(data.get(i).get(0) + ", Total Portfolio Value: " + totalValue);
             }
         }
+        for(int i = 0; i < dateBalance.size(); i++){
+            System.out.println(dateBalance.get(i));
+        }
         System.out.println(dateBalance);
         return dateBalance;
     }
@@ -243,7 +246,9 @@ public class StockBot {
             totalValue = stocksHeld * closingPrice;
             dateBalance.add(data.get(i).get(0) + ", Total Portfolio Value: " + totalValue);
         }
-        System.out.println(dateBalance);
+        for(int i = 0; i < dateBalance.size(); i++){
+            System.out.println(dateBalance.get(i));
+        }
         return dateBalance;
     }
 }
