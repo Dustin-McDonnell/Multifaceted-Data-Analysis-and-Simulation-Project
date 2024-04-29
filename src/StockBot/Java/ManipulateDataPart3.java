@@ -17,7 +17,8 @@ public class ManipulateDataPart3 {
 
     public Integer chooseN(){
         Integer n = null;
-        System.out.println("Enter the range you want the RSI to be calculated for: If you enter 5 it will a 5 day range behind each element except");
+        System.out.println("Enter the range you want the RSI to be calculated for: ");
+        System.out.println("If you enter 5 it will a 5 day range behind each element except ");
         System.out.println("for the first 10 days.");
         while (n == null) {
             if (scanner.hasNextInt()){
@@ -144,8 +145,6 @@ public class ManipulateDataPart3 {
         try{
             System.out.println("Enter the name of the data file you want to create.");
             String fileName = scanner.nextLine();
-            //Path I currently use on my macbook not sure how that will work for the Prof
-            //Working on this on my pc instead of macbook can confirm this is a problem
             File file = new File("src/StockBot/DataFiles/" + fileName + ".csv");
 
             if (file.createNewFile()){

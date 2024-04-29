@@ -50,7 +50,8 @@ public class StockBot {
         ArrayList<String> dateBalance = new ArrayList<>();
         int timePeriod = -1;
         while (timePeriod < 0) {
-            System.out.println("Enter the desired time period. ie: If you enter 2 depending on the CSV chosen it will be two weeks from the first date in the CSV");
+            System.out.println("Enter the desired time period. ie: ");
+            System.out.println("If you enter 2 depending on the CSV chosen it will be two weeks from the first date in the CSV");
             System.out.println("or two days from the start etc.");
             if (scanner.hasNextInt()) {
                 timePeriod = scanner.nextInt();
@@ -150,12 +151,11 @@ public class StockBot {
     }
 
     //public Boolean rsiCheck(ArrayList<ArrayList<String>> data, int i){
-    //  //We're taking a more aggressive stance if RSI is above 50 as opposed to the traditional 70 we buy!
-    //if(Double.parseDouble(data.get(i).get(8)) > 50){
-    //  return true;
+    //if(Double.parseDouble(data.get(i).get(8)) > 70){
+    //  return false;
     //}
     //else{
-    //  return false;
+    //  return true;
     //}
     // }
 
@@ -183,7 +183,8 @@ public class StockBot {
         ArrayList<String> dateBalance = new ArrayList<>();
         int timePeriod = -1;
         while (timePeriod < 0) {
-            System.out.println("Enter the desired time period. ie: If you enter 2 depending on the CSV chosen it will be two weeks from the first date in the CSV");
+            System.out.println("Enter the desired time period. ie: ");
+            System.out.println("If you enter 2 depending on the CSV chosen it will be two weeks from the first date in the CSV");
             System.out.println("or two days from the start etc.");
             if (scanner.hasNextInt()) {
                 timePeriod = scanner.nextInt();
@@ -218,7 +219,8 @@ public class StockBot {
         ArrayList<String> dateBalance = new ArrayList<>();
         int timePeriod = -1;
         while (timePeriod < 0) {
-            System.out.println("Enter the desired time period. ie: If you enter 2 depending on the CSV chosen it will be two weeks from the first date in the CSV");
+            System.out.println("Enter the desired time period. ie: ");
+            System.out.println("If you enter 2 depending on the CSV chosen it will be two weeks from the first date in the CSV");
             System.out.println("or two days from the start etc.");
             if (scanner.hasNextInt()) {
                 timePeriod = scanner.nextInt();
